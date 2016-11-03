@@ -1,13 +1,22 @@
 function findWaldo(arr, found) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === "Waldo") {
-      found(i);   // execute callback
+  arr.forEach(function(item, i) {
+    if (item.toLowerCase() === "waldo") {
+      found(i);
     }
-  }
+  });
 }
+// pseudo!
+// with given array and "found" function,
+// for each item in given array,
+// check whether item = waldo
+// execute found
+
 
 function actionWhenFound(index) {
   console.log("Found Waldo at index " + index + "!");
 }
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+var nameArray = ["Alice", "Bob", "Waldo", "waldo", "Winston"];
+
+findWaldo(nameArray, actionWhenFound);
+
